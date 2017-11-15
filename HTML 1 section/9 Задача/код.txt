@@ -1,0 +1,3 @@
+img width="32" src="/file/db/thang.type/529fff23cf1818f2be000003/portrait.png">
+img width="200" height="100" src="/file/db/thang.type/535ef031c519160709f2f63a/portrait.png">
+img width="300" height="200" src="https://25mb.ru/img/picture/Sep/26/566cf7ee26bd3c67c61588a9857648d7/4.jpg">

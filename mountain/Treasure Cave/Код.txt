@@ -1,0 +1,13 @@
+function buildFireTrap() {
+	hero.buildXY("fire-trap", 64, 44);
+	hero.moveXY(45, 8);
+}
+
+function gatherItems() {
+	hero.moveXY(13, 31);
+	hero.moveXY(19, 35);
+	hero.moveXY(71, 8);
+}
+
+buildFireTrap;
+gatherItems();

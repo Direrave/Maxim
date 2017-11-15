@@ -1,0 +1,26 @@
+var highLanderName = "mac";
+function wordInString(string, word) {
+	var lenString = string.length;
+	var lenWord = word.length;
+	for(var i = 0; i < lenString - lenWord; i++) {
+		for(var j = 0; j < lenWord; j++) {
+			if(string[i + j] != word[i]) {
+				break;
+			}
+			if( j == lenWord - 1) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+var soldiers = hero.findSoldiers();
+for(var i = 0; i < soldiers.length; i++) {
+	var soldier = soldiers[i];
+	if(wordInString(soldier.id, highLanderName)) {
+		hero.say(soldier.id + "be ready");
+	}
+}
+
+hero.say("ATTACK!!!");

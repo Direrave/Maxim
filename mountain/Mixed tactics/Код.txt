@@ -1,0 +1,28 @@
+var defendPoints = [{x : 39, y : 40}];
+var summonTypes = [];
+function summonTroops() {
+	var type = summonTypes[hero.built.length % summonTypes.length];
+	if(hero.gold >= hero.costOf("soldier")) {
+		hero.summon("soldier");
+	}
+}
+
+function gatherGold() {
+	var item = hero.findItems();
+	var gold = hero.findNearest(hero.findItems());
+	hero.move(gold.pos);
+}
+
+function commandTroops() {
+	var friends = hero.findFriends();
+	for(var i = 0; friendIndex < friends.length; friendIndex ++) {
+		var friend = friends[friendIndex];
+		var defPoints = defendPoints[friendIndex % defendPoints.length];
+	}
+}
+
+while(true) {
+	summonTroops();
+	gatherGold();
+	commandTroops();
+}

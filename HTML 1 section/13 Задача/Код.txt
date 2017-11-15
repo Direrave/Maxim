@@ -1,0 +1,47 @@
+<style>
+	h1 {
+		color: red;
+	}
+	h1 {
+		front-size: 7em;
+	}
+	h2 {
+		front-size: 3em;
+	}
+	h3 {
+		front-size: 1.5em;
+	}
+	li {
+		front-size: 1.5em;
+	}
+</style>
+<h1>Wanted</h1>
+<img src="http://img.espicture.ru/16/kartinki-prikolymnyie-uzbagoyysya-10.jpg">
+<h2>Strongest lemur</h2>
+<h3>For Reckless, Inhuman Crimes:</h3>
+<ul>
+	<li>sexing</li>
+	<li>Murder</li>
+	<li>Kindnapping</li>
+	<li>Kindnapping my heart</li>
+</ul>
+<h2> Reward: 100000$</h2>
+
+<h3>Know Accomplices</h3>
+<div>
+	<div>
+		<img width="300" height="200" src="https://rugeroi.ru/wp-content/uploads/2016/09/lemur-766864726726.jpg">
+		<h3>UzBagoisya</h3>
+	</div>
+	
+	<div>
+		<img width="300" heigth="200" src="http://s.fishki.net/upload/users/2015/11/15/912363/69520dfdef6d3740d888000e31c0eee7.jpg">
+		<h3>Uzbagoisya 2</h3>
+	</div>
+	
+	<div>
+		<img width="300" height="200" src="https://rugeroi.ru/wp-content/uploads/2016/09/lemur-766864726726.jpg">
+	<h3>UzBagoisya</h3>
+	</div>
+</div>
+<h2>Capture Alive Only</h2>

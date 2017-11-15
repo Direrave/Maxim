@@ -1,0 +1,33 @@
+//Собери 80 золота. 
+while(hero.gold < 80) {
+	var item = hero.findItems();
+	var gold = hero.findNearest(hero.findItems());
+	hero.move(gold.pos);
+}
+//Построй 4 солдата-приманки
+for (var i = 0; i < 4; i += 1) {
+	hero.summon("soldier");
+}
+//Отправь своих солдат на позиции 
+var points = [];
+points[0] = {x : 13, y : 73};
+points[1] = {x : 51, y : 73};
+points[2] = {x : 51, y : 53};
+points[3] = {x : 90, y : 52};
+var friends = hero.findFriends();
+
+//Используй цикл 'for', чтобы перебрать 'i' от 0 до 4
+//Прикажи друзьям двигаться на нужные точки.
+while(true) {
+	var friends = hero.findFriends();
+	for(var j = 0; j < friends.length; j++) {
+		var point = points[j];
+		var friend = friend[j];
+		var enemy = friend.findNearestEnemy();
+		if(enemy && enemy.team == "ogres" && friend.distanceTo(enemy) < 5) {
+			hero.command(friend, "attack", enemy);
+		} else { 
+			hero.command(friend, "move", point);
+		}
+	}
+}

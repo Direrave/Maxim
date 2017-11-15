@@ -1,0 +1,32 @@
+//Прикажи своим войскам двигаться на восток и атаковать любых встречныйх огров.
+//Используй цикл 'for' и 'findFriends'.
+//Ты можешь выхвать метод 'findNearestEnemy()' от своих солдат, чтобы находить ближайшего врага относительно них, а не себя.
+
+var friends =hero.findFriends();
+var friend = friend[0];
+
+for(var i = 0; i < friends.length; i++) {
+	friend = friends[i];
+	if (friend.type == "soldier") {
+		hero.command(friend, "move", {x : friend.pos.x + 20, y : friend.pos.y});
+	}
+}
+hero.say("aligth");
+hero.say("go!");
+
+var num = 1;
+var enemy;
+while(true) {
+	for(i = 0; i < friends.length, i++) {
+		friend = friend[i];
+		enemy = friend.findNearestEnemy();
+		if(enemy) {
+			hero.command(friend, "attack", enemy);
+		} else {
+			hero.command(friend, "move", {x : friend.pos.x + 5, y : friend.pos.y})
+		}
+	}
+	hero.say(num);
+	if (num == 1) num = 0;
+	else num = 1;
+}

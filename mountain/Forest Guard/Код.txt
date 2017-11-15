@@ -1,0 +1,29 @@
+while(true) {
+	//собирай золото.
+	var item = hero.findItems();
+	var gold = hero.findNearest(hero.findItems());
+	hero.move(gold.pos);
+//если золота достаточно, призови солдата.
+	if(hero.gold > hero.costOf("soldier")) {
+		hero.summon("soldier");
+	}
+//при помощи цикла 'for' приказывай каждому солдату.
+	var friends = hero.findFriends();
+//Цикл 'for' состоит из 3 частей, разделённых точками с запятой.
+//for (инициализация; условие; выражение)
+//Инициализация выполняется при первой итерации цикла.
+//Цикл выполняется, пока верно условие.
+	for(var friendIndex = 0; friendIndex < friends.length, friendIndex ++) {
+		var friend = friends[friendIndex];
+		if(friend.type == "soldier") {
+			var enemy = friend.findNearestenemy();
+//если видишь врага прикажи атаковать.
+//Если нет, прикажи следовать в первую часть карты.
+			if(enemy) {
+				hero.command(friend, "attack", enemy);
+			} else {
+				hero.command(friend, "move", {'x' : 94, 'y' : 44});
+			}
+		}
+	}
+}

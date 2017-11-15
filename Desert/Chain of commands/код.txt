@@ -1,0 +1,25 @@
+//Только твой питомец способен разбудить волшебника.
+
+function onhear(event) {
+//Событие "hear" устанавливает свойство "event.speaker"
+// Проверь, услышал ли питомец героя. 
+	if (event.speaker == hero) {
+		pet.say("WOOF");
+	}
+}
+
+//Назначь обработчик события для "hear".
+pet.on("hear", onhear);
+
+while(true) {
+	var enemy = hero.findNearestEnemy();
+	//Есть ли враг:
+	if(enemy) {
+		hero.say("прячься");
+		hero.moveXY(30, 33);
+		hero.moveXY(30, 15);
+	}
+}
+//Исльзуй "hero.say()", чтобы предупредить питомца
+//Вернись на отметку Х в лагере
+// Вернись на отметку Х вне лагеря

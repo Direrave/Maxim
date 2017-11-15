@@ -1,0 +1,19 @@
+function findSouthernUnits(units) {
+	var southernUnits = [];
+	for(var i = 0; i < units.length; i++) {
+		var unit = units[i];
+		if(unit.pos.y < hero.pos.y) {
+			southernUnits.push(unit);
+		}
+	}
+	return southernUnits;
+}
+
+while(true) {
+	var friends = hero.findFriends();
+	var enemies = hero.findEnemies();
+	var southernUnits = findSouthernUnits(enemies);
+	if(southernUnits.length > friends.length) {
+		hero.summon("soldier");
+	}
+}

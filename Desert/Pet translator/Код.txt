@@ -1,0 +1,27 @@
+// Твой питомец должен переводить команды.
+
+function onHear(event) {
+//Услышанное питомцем сообщение - в "event.message"
+	var message = event.message;
+//Если сообщение "North"
+	if(message == "North")	{
+		pet.say("Htron");
+	}
+//Если сообщение "South"
+	if(message == "South") {
+		pet.say("Htuos");
+	}
+//Если сообщение "East"
+	if(message == "East") {
+		pet.say("Tsae");
+	}
+
+//Назначь обработчик событий 
+pet.on("hear", onHear);
+
+while(true) {
+	var enemy = hero.findNearestEnemy();
+	if(enemy && enemy.type != "bravler") {
+		hero.attack(enemy);
+	}
+}

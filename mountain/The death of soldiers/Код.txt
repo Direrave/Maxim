@@ -1,0 +1,20 @@
+// Робо-бомбы взрываются, когда разрушаются или касаются противника. 
+//Раздели своих солдат, так чтобы они не взорвались все вместе. 
+
+while(true) {
+	var enemiess = hero.findEnemies();
+	var enemy = hero.findNearest(enemies);
+	var friend = hero.findFriend();
+//Отправь первого солдата из массива друзей к врагу.
+	var firstFriend = friends[0];
+	hero.command(friend[0], "move", {'x' : 67, 'y' : 38});
+// i = 1 начав индекс со второго элемента!
+	for(var i = 1; i < friends.length; i++) {
+		var friend = friends[i];
+		if(friend.type == "soldier") {
+			var enemy = hero.findNearestEnemy();
+// Прикажи оставшимся солдатам ретироваться!
+			hero.command(friend, "move", {'x' : 14, 'y' : 26})
+		}
+	}
+}

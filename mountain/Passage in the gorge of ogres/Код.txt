@@ -1,0 +1,27 @@
+// У тебя есть только 20 секунд до прихода толпы огров. 
+// Хватай столько монет, сколько сможешь, затем уноси ноги на базу и баррикадируйся.
+
+function gatherGold() {
+	while(hero.time < 20) {
+		var coins = hero.findItems();
+		var coinIndex = 0;
+		while(coinIndex < coins.length) {
+			var coin = coins[coinIndex];
+			coinIndex += 1;
+		}
+	}
+}
+
+function out() {
+	while(hero.pos.x > 15) {
+		hero.move({'x' : 13, 'y' : 37});
+	}
+}
+
+function buildFence() {
+	hero.buildXY("fence", 21, 38);
+}
+
+gatherGold();
+out();
+buildFence();

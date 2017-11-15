@@ -1,0 +1,18 @@
+//Призови несколько солдат и отправь их на базу.
+// Каждый солдат стоит 20 золотых.
+while(hero.gold > hero.costOf("soldier")) {
+	hero.summon("soldier");
+}
+
+var soldiers = hero.finFriends();
+var soldierIndex = 0;
+//Добавь цикл для командования всеми солдатами.
+while(soldierIndex < soldiers.length) {
+	var soldier = soldiers[soldierIndex];
+	hero.command(soldier, "move", {'x' : 50, 'y' : 40}
+	soldierIndex += 1;
+}
+//Присоеденись к боевым товарищам!
+while (hero.pos.x < 50) {
+	hero.move({'x' : 51, 'y' : 41})
+}

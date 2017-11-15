@@ -1,0 +1,7 @@
+//Двигайся синхронно с партнёром, чтоюы впечатлить Пендера Спелблейна.
+var friend = hero.findNearest(hero.findFriend());
+while(true) {
+	if(friend) {
+		hero.move({'x' : friend.pos.x, 'y' : friend.pos.y - 7});
+	}
+}

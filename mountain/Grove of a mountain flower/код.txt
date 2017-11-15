@@ -1,0 +1,58 @@
+hero.drawPixel = function(x, y, color) {
+	hero.setFlowerColor(color);
+	hero.toggleFlowers(false);
+	hero.moveXY(x, y);
+	hero.toggleFlowers(true);
+	hero.moveXY(x + 0.5, y + 0.5);
+	hero.moveXY(x - 0.5; y + 0.5);
+	hero.moveXY(x - 0.5; y - 0.5);
+	hero.moveXY(x + 0.5; y - 0.5);
+	hero.toggleFlowers(false);
+};
+
+hero.setColor = function(c) {
+	var color;
+	if ( c == "p") color = "pink";
+	if ( c == "r") color = "red";
+	if ( c == "b") color = "blue";
+	if ( c == "e") color = "purple";
+	if ( c == "y") color = "yellow";
+	if ( c == "w") color = "white";
+	return color;
+};
+
+hero.drawImages = function() {
+	var aImages = [
+		"wwwwwwwwwww",
+		"wwwbbwbbwww",
+		"wwwbbwbbwww",
+		"wwwwwwwwwww",
+		"wwwwbbbwwww",
+		"wwwbwwwbwww",
+		"wwwbbbbbwww",
+		"wwwbwwwwwww",
+		"wwwbwwwwwww",
+		"wwwbwwwbwww",
+		"wwwwbbbwwww",
+		"wwwwwwwwwww",
+		"wwwwwwwwwww",
+		"prbeyw"
+		];
+	var color;
+	var x;
+	for(var y = 0; y < aImages.length; y ++) {
+		if( y % 2 === 0) {
+			for( x = (aImagesy[y].length - 1); x >= 0; x--) {
+				color = hero.setColor(aImages[y][x]);
+				hero.drawPixel(60 + x * 2, 80 - y * 2, color);
+			}
+		} else {
+			for( x = 0; x <= aImages[y].length - 1; x ++) {
+				color = hero.setColor(aImages[y][x]);
+				hero.drawPixel(60 + x * 2, 80 - y * 2, color);
+			}
+		}
+	}
+};
+
+hero.drawImages();

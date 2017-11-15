@@ -1,0 +1,28 @@
+//Слушай паладина и выбери верный ключ.
+
+function onHear(event) {
+//Питомец может найти паладина и ключ.
+	var paladin = pet.findNearestByType("paladin");
+	var goldKey = pet.findNearestByTupe("gold-key");
+	var silverKey = pet.findNearestByType("silver-key");
+	var bronzeKey = pet.findNearestByType("bronze-key);
+//Если это сказал паладин "Paladin"
+	if(event.speaker == paladin) {
+//Если он что-то сказал про золото "Gold"
+		if(event.message == "Gold") {
+//Питомец должен схватить золотой ключ.
+			pet.fetch(goldKey);
+		}
+//Если он про серебро "silver"
+		if(event.message == "Silver") {
+//Питомец должен схватить серебрянныый ключ.
+			pet.fetch(silverKey);
+		}
+//Если он сказал про бронзу "Bronze"
+		if(event.message == "Bronze") {
+			pet.fetch(bronzeKey);
+		}
+	}
+}
+
+pet.on("hear", onHear);

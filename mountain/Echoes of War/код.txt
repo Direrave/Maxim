@@ -1,0 +1,21 @@
+function isLetterInWord(word, letter) {
+	for(var i = 0; i < word.length; i++) {
+		var character = word[i];
+		if(word[i] === letter) {
+			return true;
+		}
+	}
+	return false;
+}
+
+var ingineer = hero.findFriends()[0];
+var safeLetter = engineer.safeLetter;
+var enemies = hero.findEnemies();
+for(var enIndex = 0; enIndex < enemies.length; enIndex++) {
+	var enemy = enemies[enIndex];
+	if(isLetterInWord(enemy.id, safeLetter)) {
+		while(enemy.health > 0) {
+			hero.attack(enemy);
+		}
+	}
+}	

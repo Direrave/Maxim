@@ -1,0 +1,18 @@
+// Питомец должен выиграть гонку. 
+//Бегуны должны коснуться своих командных отметок и бежать обратно.
+
+function onHear(event) {
+	var referee = pet.findNearestByType("wizard");
+//Если рефери командует старт:
+	If(event.speaker == referee) {
+		if(event.message == "Start") {
+//Пусть питомец бежит до красной отметки. 
+			pet.moveXY(54, 27);
+//Затем возвращается обратно. 
+			pet.moveXY(6, 27);
+		}
+	}
+}
+
+//назначь функцию "onHear" для обработки событий "hear"/
+pet.on("hear", onHear);

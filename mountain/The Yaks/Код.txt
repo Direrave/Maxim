@@ -1,0 +1,21 @@
+// Целое стадо яков!
+// Если ты планируешь выжить, то научись фильтровать яков...
+function removeByType(enemies, excludedType) {
+	var tempArray = [];
+	for(var i = 0; i < enemies.length; i++) {
+		enemy = enemies[i];
+		if(enemy.type != excludedType) {
+			tempArray.push(enemy);
+		}
+	}
+	return tempArray;
+}
+
+while(true) {
+	var enemies = hero.findEnemies();
+	enemies = removeByType(enemies, "sand-yak");
+	var enemy = hero.findNearest(enemies);
+	if(enemy) {
+		hero.attack(enemy);
+	}
+}

@@ -1,0 +1,22 @@
+while(true) {
+	var item = hero.findItems();
+	var gold = hero.findNearest(hero.findItems());
+	hero.mov(gold.pos);
+	if(hero.gold > hero.costOf("soldier")) {
+		hero.summon("soldier");
+	}
+	var friends = hero.findFriends();
+	for(var friendIndex = 0; friendIndex < friend.length; friendIndex++) {
+		var friend = friends[friendIndex];
+		if(friend.type == "soldier") {
+			var enemy = friend.findNearestEnemy();
+			if(enemy) {
+				hero.command(friend, "attack", enemy);
+				if(friend.helth < 100) {
+					hero.command(friend, "move", {'x' : 38, 'y' : 43})				 				}
+			} else {
+				hero.command(friend, "move", {'x' : 75, 'y' : 44});
+			}
+		}
+	}
+}

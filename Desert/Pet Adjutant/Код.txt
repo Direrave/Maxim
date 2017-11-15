@@ -1,0 +1,37 @@
+// Твой питомец поможет тебе выжить до спасения.
+function onHear(event) {
+//В event message содержится услышанный текст.
+//Если кто-то сказал Fire
+	if(event.message == "fire") {
+//Двигайся на нижнюю отметку Х с помощью pet.moveXY();
+		pet.moveXY(64, 16);
+		pet.say("ready");
+	}
+//Если кто-то сказал "Heal"
+	if(event.message == "Heal") {
+//Двигайся на верхнюю отметку Х с помощью pet.moveXY()
+		pet.moveXY(64, 52);
+//Скажи что-нибудь с помощью pet.say()
+		pet.say("already");
+	}
+}
+
+pet.on("hear", onHear);
+
+//Код ниже менять не обязательно 
+while (true) {
+	var enemy = hero.findNearestEnemy();
+	if(enemy) {
+//Если враг чересчур силён.
+		if(enemy.type == "brawler") {
+			hero.say("Fire");
+		} else {
+			hero.attack(enemy);
+		}
+	} else {
+//Если твой герой нуждается в лечении.
+		if(hero.health < hero.maxHealth / 2) {
+			hero.say("Heal");
+		}
+	}
+}

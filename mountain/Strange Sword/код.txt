@@ -1,0 +1,29 @@
+hero.findStrongestTarget = function() {
+	var strongestEnemy = null;
+	var strongestHealth = 0;
+	var enemies = hero.findEnemies();
+	for(var i = 0; i < enemies.length; i++) {
+		var enemy = enemies[i];
+		if(enemy.health > strongestHealth) {
+			strongestEnemy = enemy;
+			strongestHealth = enemy.health;
+		}
+	}
+	return strongestEnemy;
+};
+
+hero.commandArcher = function(archer) {
+	if(archerTarget) {
+		hero.command(archer, "attack", archerTarget);
+	}
+};
+
+var archerTarget = 0;
+while(true) {
+	var archers = hero.findByType("archer");
+	for(var i = 0; i < archers.length; i++) {
+		var archer = archers[i];
+		archerTarget = hero.findStrongestTarget();
+		hero.commandArcher(archer);
+	}
+}

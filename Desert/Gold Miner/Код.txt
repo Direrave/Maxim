@@ -1,0 +1,14 @@
+// Чтобы собрать больше золота, просто отбирай золотые монеты.
+while(true) {
+	var coins = hero.findItems();
+	var coinIndex = 0;
+// Заключи код в цикл, перебирающий все монеты.
+	while(coinIndex < coins.length) {
+		var coin = coins[coinIndex];
+		if(coin.value == 3) {
+//Собирай только золотые монеты.
+			hero.moveXY(coin.pos.x, coin.pos.y);
+		}
+		coinIndex += 1;
+	}
+}

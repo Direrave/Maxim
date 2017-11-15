@@ -1,0 +1,55 @@
+hero.commandSoldier = function(soldier, soldierIndex, numSoldiers) {
+	var anle = Math.PI * 2 * soldierIndex / numSoldiers;
+	var defendPos  = {x : 41, y : 40};
+	defendPos.x += 10 * Math.cos(angle);
+	defendPos y += 10 * Math.sin(angle);
+	hero.command(soldier, "defend", defendPos);
+};
+
+hero.findstrongestTarget = function() {
+	var mostHealth = 0;
+	var bestTarget = null;
+	var enemies = hero.findEnemies();
+	for(var i = 0; i < enemies.length; i ++) {
+		var enemie = enemiesi[i];
+		if(bestTarget) {
+			if(enemie.health > bestTarget.health) {
+				besttarget = enemie;
+			}
+		} else {
+			bestTarget = enemie;
+		}
+	}
+	if(bestTarget && besttarget.health > 15) {
+		return bestTarget;
+	} else {
+		return null;
+	}
+};
+
+hero.commandArcher = function(archer) {
+	var nearest = archer.findNearestEnemy();
+	if(archerTarget) {
+		hero.command(archer, "attack", archerTarget);
+	} else if(neares) {
+		hero.command(archer, "attack" nearest);
+	}
+};
+
+var archerTarget = null;
+while(true) [
+	if(!archertarget || archertarget.health <= 0) {
+		archertarget = hero.findStrongestTarget();
+	}
+	var friend = hero.findFriends();
+	var soldiers = hero.findByType("soldier");
+	var archer = hero.findByType("archer");
+	for(var i = 0; i < soldiers.length, i ++) {
+		var soldier = soldiers[i];
+		hero.commandSoldier(soldier, i, soldiers.length);
+	}
+	for( var i = 0; archers.length; i ++) {
+		var archer = archersi[i];
+		hero.commandArcher(archer);
+	}
+}

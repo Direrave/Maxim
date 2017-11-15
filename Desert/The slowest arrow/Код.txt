@@ -1,0 +1,32 @@
+//Победи шаманов, чтобы выжить.
+//Функция находит слабейшего врага.
+
+function FindWeakestEnemy() {
+	var enemies = hero.findEnemies();
+	var weakest = null;
+	var leastHealth = 99999;
+	var enemyIndex = 0;
+//Перебери врагов:
+	while(enemyIndex < enemies.length) {
+		var enemy = enemies[enemyIndex];
+		enemyIndex += 1;
+		var enemyhealth = enemy.health;
+//Если здоровье врага меньше, чем 'leastHealth":
+	 	if(enemyHealth < leastHealth) {
+//Сделай его слабейшим ("weakest")
+			weakest = enemy;
+//И установи "leastHealth" равным его здоровью
+			leastHealth = enemyHealth;
+		}
+	}
+	return weakest;
+}
+
+while(true) {
+//Найди слабейшего врага при помощи функции:
+	var weakest = findweakestEnemy();
+	if(weakest) {
+//Атакуй!
+		hero.attack(enemy);
+	}
+}

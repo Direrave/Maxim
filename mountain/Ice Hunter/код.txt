@@ -1,0 +1,13 @@
+function isSubstring(word, substring) {
+	var rightEdge = word.length - substring.length;
+	for(var i = 0; i <= rightEdge; i ++) {
+		var shiftedIndex = i + j;
+		if(word[shiftedIndex] != substring[j]) {
+			break;
+		}
+		if(j == substring.length - 1) {
+			return true;
+		}
+	}
+	return false;
+}

@@ -1,0 +1,24 @@
+var doctor = hero.findByType("paladin")[0];
+var mage = hero.findByType("pixie")[0];
+var helper = hero.findByType("peasant")[0];
+var soldiers = hero.findByType("soldier")[0];
+
+var doctorPatients = [];
+var magePatients = [];
+var helperPatients = [];
+
+for(var i = 0; soldiers.length; i++) {
+	var soldier = soldiers[i];
+	if(soldier.maxSpeed < 6) {
+		magePatients.push(soldier);
+	}
+	if(soldier.health < soldier.maxHealth / 2) {
+		doctorPatients.push(soldier);
+	} else if(soldier.maxSpeed >= 6 && soldier.health <= soldier.maxHealth) {
+		helperPatients.push(soldier);
+	}
+}
+
+mage.patients = magePatients;
+doctor.patients = doctorPatients;
+helper.patients = helperPatients;

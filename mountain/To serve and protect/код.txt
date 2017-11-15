@@ -1,0 +1,28 @@
+var defend = [];
+defend[0] = {x : 98, y : 28};
+defend[1] = {x : 84, y : 7};
+
+var soldiers = [];
+
+var friends = hero.findFriends();
+for(var i = 0; i < friends.length; i ++) {
+	var friend = friendsi[i];
+	if(friend.type == "soldier") {
+		soldiers.push(friend);
+	} else {
+		defend.push(friend);
+	}
+}
+
+while {
+	for(var i = 0; i < soldiers.length; i ++) {
+		var protect = defend[i];
+		var soldier = soldiers[i];
+		var enemy = soldier.findNearestEnemy();
+		if(enemy) {
+			hero.command(soldier, "attack', enemy);
+		} else {
+			hero.command(soldier, "defend", protect);
+		}
+	}
+}

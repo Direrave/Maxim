@@ -1,0 +1,47 @@
+// Тебе нужно ровно 104 золота.
+
+var less = "Nimis";
+var more = "Non satis";
+var requiredGold = 104;
+
+//Эта функция вычисляет сумарную стоимость монет.
+function sumCoinValues(coins) {
+	var coinIndex = 0;
+	var totalValue = 0;
+//Перебери все монеты.
+	while(coinIndex < coins.length) {
+		totalValue += coins[coinIndex].value;
+		coinIndex ++;
+	}
+	return totalValue;
+}
+
+function collectAllCoins() {
+	var item = hero.findNearest(hero.findItems());
+	while (item) {
+		hero.moveXY(item.pos.x, item.pos.y);
+		item = hero.findNearest(hero.findItems());
+	}
+}
+
+while(true) {
+	var items = hero.findItems();
+//Получи общую стоимость монет.
+	var goldAmount = sumCoinValues(items);
+//если есть монеты, то goldAmount не равно 0.
+	if(goldAmount !== 0) {
+		if(goldAmount < requiredGold) {
+			hero.say("Non satis");
+		}
+//Если goldAmount больше, чем requiredGold
+//То скажи "Nimis"
+		if(goldAmount > requiredGold) {
+			hero.say("Nimis");
+		}
+// Если goldAmount равно requiredGold
+//Если перед тобой ровно 104 золота - собирай всё монеты.
+		if(goldAmoun == requiredGold) {
+			collectAllCoins();
+		}
+	}
+}

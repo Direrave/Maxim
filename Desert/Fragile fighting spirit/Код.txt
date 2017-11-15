@@ -1,0 +1,27 @@
+// У тебя есть только один выстрел, но это должен быть смертельный выстрел.
+// Функция должна возвращать наиболее здорового (health) врага.
+function findStrongestenemy(enemies) {
+	var strongest = null;
+	var strongestHealth = 0;
+	var enemyIndex = 0;
+//Пока счётчик (enemyIndex) меньше чем длина массива врагов 
+	while(enemyIndex < enemies.length) {
+// присвой переменной enemy значение элемента массива врагов enemies[enemyIndex]
+	var enemy = enemies[enemyIndex];
+//Если здоровье врага (enemy.helath) больше чем наибольшее известное strongestHealth
+		if(enemy.health > strongestHealth) {
+//Назначь переменной strongest более здорового врага enemy
+			strongest = enemy;
+			strongestHealth = enemy.health;
+		}
+//Бездонные циклы никому не нужны. Увеличивай счётчик.
+		enemyIndex += 1;
+ 	}
+	return strongest;
+}
+
+var enemies = hero.findenemies();	
+var leader = findstrongestenemy(enemies);
+if(leader) {
+	hero.say(leader);
+}

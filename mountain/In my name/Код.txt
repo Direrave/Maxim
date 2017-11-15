@@ -1,0 +1,13 @@
+function letterIndex(word, letter) {
+	for(var i = 0; i < word.length; i ++) {
+		if(letter === word[i]) {
+			return i;
+		}
+	}
+	return - 1;
+}
+
+var ogreLetter = "z";
+var shaman = hero.findbyType("thoktar")[0];
+var chestIndex = letterIndex(shaman.id, ogreLetter);
+hero.moveXY( 16 + chestIndex * 8, 36);

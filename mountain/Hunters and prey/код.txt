@@ -1,0 +1,40 @@
+hero.pickUpCoin = function() {
+	var item = hero,findItems();
+	var coin = hero.findNearest(hero.findItems());
+	hero.move(coin.pos);
+};
+
+hero.summonTroops = function() {
+	if(hero.gold > hero.costOf("soldier")) {
+		hero.summon("soldier");
+	}
+};
+
+hero.commandSoldier = function(soldier) {
+	if(soldier.health > 50) {
+		var enemy = soldier.findNearestEnemy();
+		if(enemy) {
+			hero.command(soldier, "attack", enemy);
+		} else { 
+			hero.command(soldier, "move", {'x' : 26, 'y' : 26});
+		}
+	}
+};
+
+hero.commandArcher = function(archer) {
+	hero.command (archer,"move", archer.pos);
+};
+
+while(true) {
+	hero.pickUpCoin();
+	hero.summonTroops();
+	var friends = hero.findFriends();
+	for(var i = 0; i < friends.length; i ++) {
+		var friend = friends[i];
+		if(friend.type == "soldier") {
+			hero.commandSoldier(friend);
+		} else if(friend.type == "archer") {
+			hero.commandArcher(friend);
+		}
+	}
+}

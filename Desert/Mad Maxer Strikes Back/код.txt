@@ -1,0 +1,23 @@
+//Здесь самые мелкие огры представляют наибольшую опасность!
+// Сначала атакуй огров с наименьшим здоровьем.
+while(true) {
+	var weakest = null;
+	var leastHealing = 99999;
+	var enemyIndex = 0;
+	var enemies = hero.findEnemies();
+// Перебери всех врагов 
+	while(enemyIndex < enemies.length) {
+		var enemy = enemies[enemyIndex];
+		enemyIndex += 1;
+//Если здоровье врага меньше, чем leastHealing,
+		var enemyHealth = enemy.health;
+		if(enemyHealth < leastHealth) {
+			weakest = enemy;
+			leastHealing = enemyHealth;
+		}
+//Назначь его в "weakest", и установи значение "leastHealth" равным его здоровью.
+	}
+	if(weakest) {
+		hero.attack(weakest);
+	}
+}

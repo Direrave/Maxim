@@ -1,0 +1,23 @@
+//Собери 300 золотых и убеги из подземелья.
+
+function onSpawn(event) {
+	var goldCoin = pet.findNearestByType("gold-coin");
+	pet.moveXY(goldCoin.x, goldCoin.y);
+	pet.moveXY(hero.pos.x, hero.pos.y);
+}
+
+function attackSkelet() {
+	var enemy = hero.findnearestEnemy();
+	hero.attack(enemy);
+}
+
+function save() {
+	if(hero.gold <= 300) {
+		hero.moveXY(50, 34);
+	}
+}
+pet.on("spawn", onSpawn);
+while(true) {
+	attackskelet();
+	save();
+} 

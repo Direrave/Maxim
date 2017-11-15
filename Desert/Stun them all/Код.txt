@@ -1,0 +1,35 @@
+function attackOgrs() {
+	var enemies = hero.findEnemies(0;
+	var enemyIndex = 0;
+	while(enemyIndex < enemies.length) {
+		var enemy = enemies[enemyIndex];
+		hero.bash(enemy);
+		enemyIndex += 1;
+		break;
+	}
+}
+
+function gatherGems() {
+	var coins = hero.findItems();
+	var coinIndex = 0;
+	while (coinIndex < coins.length) {
+		var coin = coins[coinIndex];
+		hero.moveXY(coins[coinIndex].pos.x, coin[coinIndex].pos.y);
+		hero.moveXY(40, 33);
+		coinIndex += 1;
+		break;
+	}
+}
+
+function backOut() {
+	var enemy = hero.findNearestEnemy();
+	while (enemy.health > 0) {
+		hero.moveXY(40, 33);
+	}
+}
+
+while(true) {
+	attackOgrs();
+	backOut();
+	gatherGems();
+}

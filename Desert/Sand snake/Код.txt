@@ -1,0 +1,26 @@
+//Поле покрыто минами. К счатью, ранее тут прошёл разведчик и выложил монетами безопасный путь. 
+Иди каждый раз к ближайшей монете, чтобы избежать ловушек.
+// В этом каньоне "findNearest" не работает.
+// Тебе надо найти ближайшую монету самостоятельно
+
+while(true)  {
+	var coins = hero.findItems();
+	var coinIndex = 0;
+	var nearest = null;
+	var nearestDistance = 99999;
+//Перебери все монеты, что бы найти ближайшую.
+	while(coinIndex < enemies.length) {
+		var coin = coins[coinIndex];
+		coinIndex++;
+		var distance = hero.distanceto(coin);
+//если расстояние до монеты меньше, чем "nearestDistance"
+ 		if(distance < nearestDistance) {
+			nearest = coin;
+			nearestDistance = distance;
+		}
+//Установи в "nearest" монету
+//Установи в "nearestDistance" расстояние
+	}
+//Есть ближайшая монета, иди к ней. Используй "moveXY", дабы не срезать углы.
+	hero.moveXY(nearest.pos.x, nearest.pos.y);
+}

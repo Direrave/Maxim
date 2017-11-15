@@ -1,0 +1,32 @@
+//Защити свои башни на этом повторяющем испытательном уровне!
+//встань на отметку Х, если имеется 20 золота для создания солдата.
+
+function gatherGold() {
+	while(hero.gold <= 20) {
+		var item = hero.findNearestItem();
+		if(item) {
+			hero.moveXY(item.pos.x, item.pos.y);
+		}
+	}
+}
+
+function buildSolgers1() {
+	hero.moveXY(84, 51);
+}
+
+function buildSolgers2() {
+	hero.moveXY(84, 51);
+}
+
+function buildSolgers3() {
+	hero.moveXY(83, 78);
+}
+
+while(true) {
+	gatherGold();
+	buildSolgers1();
+	gatherGold();
+	buildSolgers2();
+	gatherGold();
+	buildSolgers3();
+}

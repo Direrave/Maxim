@@ -1,0 +1,22 @@
+<style> 
+	.character {
+		background-color: orange;
+	}
+</style>
+
+<div>
+	<h1>Romeogre and Juliet</h1>
+	<h2>The Cast</h2>
+</div>
+<div class="character">
+	<img src="https://www.codecombat.com/file/db/thang.type/529ab1a24b67a988ad000002/portrait.png">
+	<h3>Cindy Archer</h3>
+	<p>as Juliet</p>
+</div>
+
+<div>
+<div class ="character">
+	<img width="300" height="300" src="https://www.notelyrics.com/images/S/Shrek/Shrek_10.jpg">
+	<h3>Chuvak</h3>
+	<p>as Romeogre</p>
+</div>

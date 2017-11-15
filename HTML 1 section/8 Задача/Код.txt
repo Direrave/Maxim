@@ -1,0 +1,12 @@
+<h1>The News</h1>
+<style>
+	h1 {
+		color: red;
+		text-decoration: underline;
+		text-align: center
+	}
+	p {
+		text-align: center;
+		color: purple;
+	}
+</style>

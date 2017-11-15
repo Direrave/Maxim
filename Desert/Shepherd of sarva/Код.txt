@@ -1,0 +1,17 @@
+// Используй цикл "while", что бы выбрать огра
+while(true) {
+	var enemies = hero.findEnemies();
+	var enemyIndex = 0;
+// Расположи это в цикле "while", что бы атоковать всех врагов.
+// Найди длинну массива: enemies.lenght
+	while(enemyIndex < enemies.length) {
+		var enemy = enemies[enemyIndex];
+		if(enemy.type != "sand-yak") {
+// Пока здоровье врага больше 0, атакуй!
+			hero.attack(enemy);
+		}
+		enemyIndex += 1;
+	}
+// В перерывах между волнами возвращайся в центр.
+		hero.moveXY(40, 32);
+}

@@ -1,0 +1,19 @@
+// Не позволь ограм вступить в рощу.
+function onSpawn() {
+	while (true) {
+		var scout = pet.findNearestByType("scout");
+		if (scout && pet.isReady("charm")) {
+			pet.charm(scout);
+		}
+	}
+}
+
+//Назначь обработчик событий на событие питомца "spawn".
+pet.on("spawn", onSpawn);
+// Сражайся!.
+while (true) {
+	var enemy = hero.findNearestEnemy();
+	if(enemy) {
+		hero.attack(enemy);
+	}
+}

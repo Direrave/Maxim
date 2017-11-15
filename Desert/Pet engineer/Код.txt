@@ -1,0 +1,26 @@
+// Перемести птиомца на левую или правую кнопку по необходимости.
+
+function onHear(event) {
+//Найди стражей, которых надо слушать.
+	var archer = pet.findNearestByType("archer");
+	var soldier = per.findNearestByType("soldier");
+//Если "event.speaker" лучник :
+	if(event.speaker == archer) {
+//Двигайся на левую кнопку.
+		pet.moveXY(32, 30);
+	}
+//Если "event.speaker" солдат:
+	if(event.speaker == soldier) {
+		pet.moveXY(48, 30);
+	}
+}
+
+pet.on("hear", onHear);
+//Не нужно менять код ниже.
+// Герой должен защитить проход внизу справа.
+while(true) {
+	var enemy = hero.findNearestEnemy();
+	if(enemy) {
+		hero.attack(enemy);
+	}
+}

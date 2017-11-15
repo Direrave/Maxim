@@ -1,0 +1,24 @@
+//Монеты исчезают через несколько секунд!
+//Собери все золотые монеты до того, как они исчезнут.
+
+while(true) {
+	var closestGold = null;
+	var minGoldDist = infitity;
+	var coinIndex = 0;
+	var coins = hero.findItems();
+//Найди ближайшую золотую монету.
+//Запомни: золотая монета имеет ценность 3.
+	var coin = hero.findNearestItem();
+	while(coinIndex < coins.length) {
+		var coin = coins[coinIndex];
+		coinIndex += 1;
+		if(coin.value == 3 && hero.distanceTo(coin) < minGoldDist) {
+			closestGold = coin;
+			minGoldDist = hero.distanceTo(coin);
+		}
+	}
+	if(closestGold) {
+//А теперь доберись до ближайшей золотой монеты и возьми её!
+		hero.moveXY(closestGold.pos.x, closestGold.pos.y);
+	}
+}

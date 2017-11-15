@@ -1,0 +1,23 @@
+// —начала убивай самых дальних врагов.
+while(true) {
+	var farthest = null;
+	var maxDistance = 0;
+	var enemyIndex = 0;
+	var enemies = hero.findEnemies();
+//ѕеребери всех врагов, что бы определить, какой из них находитс€ дальше всех.
+	while (enemyIndex < enemies.length) {
+		var target = enemies[enemyIndex];
+		enemyIndex += 1;
+// Ётот враг дальше, чем прежний самый дальний? 
+		var distance = hero.distanceTo(target);
+		if(distance > maxDistance) {
+			maxDistance = distance;
+			farthest = target;
+		}
+	}
+	if(farthest) {
+//”ничтожь самого дальнего врага!
+// ѕродолжай атаковать врага, пока его здоровье больше 0.
+		hero.attack(target);
+	}
+}
